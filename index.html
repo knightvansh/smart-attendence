@@ -1,0 +1,178 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Curriculum Portal - Login</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn-tailwindcss.vercel.app/"></script>
+    <!-- Use Inter font family -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* A slightly cooler gray background */
+        }
+        /* Styling for the feature cards */
+        .feature-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 1.5rem; /* More rounded corners */
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.1);
+        }
+        /* Styling for the login buttons */
+        .login-btn {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            border-radius: 1rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+        }
+        .login-btn:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8">
+
+    <!-- Header -->
+    <header class="w-full max-w-6xl mb-12 text-center">
+        <div class="flex items-center justify-center">
+            <svg class="w-10 h-10 text-indigo-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1v-3m-6.494-8.506a4.5 4.5 0 011.664-1.996 4.5 4.5 0 014.136 0 4.5 4.5 0 011.664 1.996M11.5 14h1M2.25 10.5h19.5" /></svg>
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
+                Welcome to the Smart Curriculum Portal
+            </h1>
+        </div>
+        <p class="text-lg text-indigo-500 mt-2">Your Gateway to Smart Attendance & Activity Management</p>
+    </header>
+
+    <!-- Main Content: 3-Column Layout -->
+    <main class="w-full max-w-6xl">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+
+            <!-- 1. STUDENT INFO BLOCK (Left) -->
+            <div class="feature-card order-2 lg:order-1">
+                <h2 class="text-2xl font-bold text-teal-700 mb-4">For Students</h2>
+                <p class="text-gray-500 mb-6">Access your academic world with a single click.</p>
+                <ul class="space-y-3 text-gray-600">
+                    <li class="flex items-center"><svg class="w-5 h-5 text-teal-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>Submit Assignments</li>
+                    <li class="flex items-center"><svg class="w-5 h-5 text-teal-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>View Attendance Records</li>
+                    <li class="flex items-center"><svg class="w-5 h-5 text-teal-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>Download Study Notes</li>
+                    <li class="flex items-center"><svg class="w-5 h-5 text-teal-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>Join Curriculum Activities</li>
+                </ul>
+            </div>
+
+            <!-- 2. CENTRAL LOGIN CHOICE BLOCK -->
+            <div class="feature-card bg-gray-800 text-white order-1 lg:order-2 p-8 lg:p-12 text-center scale-105">
+                 <h2 class="text-3xl font-bold mb-6">Login Portal</h2>
+                 <p class="text-gray-300 mb-8">Please select your role to continue.</p>
+                 <div class="space-y-4">
+                     <a href="#" onclick="showLoginModal('student')" class="login-btn bg-teal-500 text-white hover:bg-teal-600">
+                         Login as Student
+                     </a>
+                     <a href="#" onclick="showLoginModal('teacher')" class="login-btn bg-indigo-500 text-white hover:bg-indigo-600">
+                         Login as Teacher
+                     </a>
+                 </div>
+            </div>
+
+            <!-- 3. TEACHER INFO BLOCK (Right) -->
+             <div class="feature-card order-3 lg:order-3">
+                <h2 class="text-2xl font-bold text-indigo-700 mb-4">For Teachers</h2>
+                <p class="text-gray-500 mb-6">Manage your classroom and activities efficiently.</p>
+                <ul class="space-y-3 text-gray-600">
+                    <li class="flex items-center"><svg class="w-5 h-5 text-indigo-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Track Submissions</li>
+                    <li class="flex items-center"><svg class="w-5 h-5 text-indigo-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>Take Smart Attendance</li>
+                    <li class="flex items-center"><svg class="w-5 h-5 text-indigo-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>Upload Notes & Notices</li>
+                    <li class="flex items-center"><svg class="w-5 h-5 text-indigo-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"></path></svg>Manage Student Activities</li>
+                </ul>
+            </div>
+
+        </div>
+    </main>
+    
+    <!-- Login Modal -->
+    <div id="login-modal" class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 hidden z-50">
+        <div id="modal-content" class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md transform transition-all">
+            <!-- Modal content will be injected here by JavaScript -->
+        </div>
+    </div>
+
+
+    <script>
+        const modal = document.getElementById('login-modal');
+        const modalContent = document.getElementById('modal-content');
+
+        // Function to show the modal with the correct form
+        function showLoginModal(role) {
+            let formHTML = '';
+            if (role === 'teacher') {
+                formHTML = `
+                    <h2 class="text-2xl font-bold text-indigo-700 mb-4 flex items-center">Teacher Login</h2>
+                    <p class="text-gray-500 mb-6">Access your classroom management tools.</p>
+                    <form onsubmit="event.preventDefault(); window.location.href='teacher_dashboard.html';">
+                        <div class="mb-4">
+                            <label for="teacher-email" class="block text-sm font-medium text-gray-700 mb-1">Email / ID</label>
+                            <input type="text" id="teacher-email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="e.g. jdoe@school.edu" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="teacher-password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                            <input type="password" id="teacher-password" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="••••••••" required>
+                            <a href="#" class="text-sm text-indigo-600 hover:text-indigo-500 mt-1 block text-right">Forgot Password?</a>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <button type="button" onclick="closeModal()" class="w-1/3 bg-gray-200 text-gray-700 font-semibold py-3 rounded-xl hover:bg-gray-300 transition">Cancel</button>
+                            <button type="submit" class="w-2/3 bg-indigo-600 text-white font-semibold py-3 rounded-xl shadow-lg hover:bg-indigo-700 transition">Sign In</button>
+                        </div>
+                    </form>
+                `;
+            } else if (role === 'student') {
+                formHTML = `
+                    <h2 class="text-2xl font-bold text-teal-700 mb-4 flex items-center">Student Login</h2>
+                    <p class="text-gray-500 mb-6">Access your records, materials, and activities.</p>
+                    <form onsubmit="event.preventDefault(); alert('Student login successful! (Redirect not set up)'); closeModal();">
+                        <div class="mb-4">
+                            <label for="student-roll" class="block text-sm font-medium text-gray-700 mb-1">Roll Number / ID</label>
+                            <input type="text" id="student-roll" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500" placeholder="e.g. 2024001" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="student-password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                            <input type="password" id="student-password" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500" placeholder="••••••••" required>
+                            <a href="#" class="text-sm text-teal-600 hover:text-teal-500 mt-1 block text-right">Forgot Password?</a>
+                        </div>
+                         <div class="flex items-center gap-4">
+                            <button type="button" onclick="closeModal()" class="w-1/3 bg-gray-200 text-gray-700 font-semibold py-3 rounded-xl hover:bg-gray-300 transition">Cancel</button>
+                            <button type="submit" class="w-2/3 bg-teal-600 text-white font-semibold py-3 rounded-xl shadow-lg hover:bg-teal-700 transition">Sign In</button>
+                        </div>
+                    </form>
+                `;
+            }
+            modalContent.innerHTML = formHTML;
+            modal.classList.remove('hidden');
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            modal.classList.add('hidden');
+        }
+        
+        // Close modal if user clicks outside of the content area
+        modal.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+
+    </script>
+</body>
+</html>
