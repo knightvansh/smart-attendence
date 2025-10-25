@@ -1,2 +1,2 @@
 # smart-attendence
-Track the tendons of the students through phase authentication and qr code
+Track the attendence  of the students through  face authentication and qr code
